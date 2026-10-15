@@ -1,16 +1,37 @@
-# React + Vite
+# Avi Balsingh Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive React portfolio for Web Application Development Assignment 1. The site includes six hash-routed views: Home, About, Projects, Education, Services, and Contact.
 
-Currently, two official plugins are available:
+## Run locally
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+```sh
+npm install
+npm run dev
+```
 
-## React Compiler
+## Build and lint
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```sh
+npm run build
+npm run lint
+```
 
-## Expanding the ESLint configuration
+Run the production build locally with `npm run preview`. The built static site is written to `dist/`.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Project assets
+
+- Profile and project photographs are in `public/images/`.
+- The résumé PDF is `public/resume.pdf` and is linked from the About page.
+- The original AB brand mark is used in the main navigation and browser favicon.
+
+## Contact form
+
+The form requires a visitor's first name, last name, contact number, email address, and message. On submission, it captures the entered values in the current page session and returns the visitor to Home. It does not send or persist messages.
+
+## Assignment handoff
+
+- [ ] Review portfolio content and résumé before publishing.
+- [x] Create a GitHub repository and push the complete source project: [Spntrx/React-Portfolio](https://github.com/Spntrx/React-Portfolio).
+- [ ] Deploy the production build from `dist/` using a static host such as Netlify, Vercel, or Render.
+- [ ] Add the live-site URL to the assignment submission.
+- [x] Include a ZIP of the project source; exclude `node_modules/` and `dist/`.

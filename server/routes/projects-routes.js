@@ -1,27 +1,22 @@
 import express from 'express';
 import {
-    createProject,
-    deleteProject,
-    getAllProjects,
-    getProjectById,
-    updateProject
+  createProject,
+  deleteProject,
+  getAllProjects,
+  getProjectById,
+  updateProject
 } from '../controllers/projects-controllers.js';
+import authMiddleware from '../middlewares/auth.js';
 
 const router = express.Router();
 
-// REST API simulate CRUD
+// READs (Public)
+router.get('/', getAllProjects);
+router.get('/:id', getProjectById);
 
-// READs
-router.get("/", getAllProjects);
-router.get("/:id", getProjectById);
-
-// CREATE
-router.post("/", createProject);
-
-// UPDATE
-router.put("/:id", updateProject);
-
-// DELETE
-router.delete("/:id", deleteProject);
+// Protected routes (Require valid JWT)
+router.post('/', authMiddleware, createProject);
+router.put('/:id', authMiddleware, updateProject);
+router.delete('/:id', authMiddleware, deleteProject);
 
 export default router;
